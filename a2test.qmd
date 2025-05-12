@@ -31,6 +31,8 @@ This guide will demonstrate how to use git ..\
 
 -   RStudio has a section called "Terminal" that is a Command Line Interface (CLI), so we will be using it to perform all CLI based tasks.
 
--   , we will use the CLI and open the directory for the folder.
+-   Now use the CLI and open the directory for the folder.
 
--   then use the command `git init` to initialise the folder as a git repository
+-   Use the command `git init` to initialise the folder as a git repository
+
+-   
