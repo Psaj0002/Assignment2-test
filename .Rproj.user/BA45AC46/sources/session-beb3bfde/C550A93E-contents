@@ -136,8 +136,28 @@ Branches are an extremely useful and important feature of git. It allows the use
 
 -   In cases such as this where we would like to modify the previous commit to include a file that we may have missed out, we can use the command `git commit --amend`. This command lets you modify the previous commit, so we can use it to add files or change the commit message.
 
--   Before we use the command, we have to stage the folder using `git add` first. The end commands will look like this
+-   Before we use the command, we have to stage the folder using `git add` first. The end commands will look like this:
+
+    ``` bash
+    git add data/
+    git commit --amend
+    ```
+
+-   Once this code is entered, a text editor will open with the existing commit message.
 
     ```{r}
-    knitr::include_graphics("./images/Screenshot 2025-05-13 at 8.07.29.png")
+    knitr::include_graphics("./images/Screenshot 2025-05-13 at 11.33.42.png")
     ```
+
+-   We can make changes to this commit message in the text editor. Be sure to save the text file and close the text editor. If you do not wish to change the commit message, you can simply close the text editor. Once this is done, the current commit should have the new commit message and all the files we staged earlier as well.\
+    We can check the commits using the command `git log –oneline`.
+
+    ```{r}
+     knitr::include_graphics("./images/Screenshot 2025-05-13 at 11.37.10.png")
+    ```
+
+-   Now push the commit to the remote repository using
+
+``` bash
+git push origin testbranch
+```
