@@ -1,38 +1,93 @@
 ---
-title: "a2"
-format: html
+title: "ETC5513_Assignment_2"
+author: Pranav Sajeev - 35571381
+format:
+  html:
+    fig-width: 6
+    fig-height: 4
+    toc: false
+    theme: cosmo
 editor: visual
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  fig.width = 3,
+  fig.height = 3,
+  fig.align = "center"
+)
+```
 
 This guide will demonstrate how to use git ..\
 \*\*\* INTRO REQUIRED \*\*\*
 
-1.  Create an RStudio project. In this folder, create a simple qmd file called `example.qmd` that can be knitted into a HTML file. Show the result of the knitted file.
+**1. Create an RStudio project. In this folder, create a simple qmd file called `example.qmd` that can be knitted into a HTML file. Show the result of the knitted file.**
 
 -   First, open RStudio.
 
--   Then navigate to the File section, and select "New Project" as shown below\
-    (insert ss).
+-   Then navigate to the File section, and select "New Project" .
 
--   Select "New Directory", and then select "New Project".
+-   In the menu that pops up after this, select "New Directory", and then select "New Project".
 
--   Set your desired directory name and choose where you want the project to be stored, as shown below, then click on "Create Project"\
-    (insert ss)\
+-   Set your desired directory name and choose where you want the project to be stored, as shown below, then click on "Create Project"
 
--   Navigate to the File section like in fig1, in the new project we just created, and click on "New File", and select "Quarto Document" to create a .qmd file.
+-   Navigate to the File section again, in the new project we just created, and click on "New File", and select "Quarto Document" to create a .qmd file. Save it and name it `example.qmd` .\
 
--   Upon creating the Qmd file, select the "Render" button as shown in the figure below. Rendering the qmd file will require you to save it first.\
-    (insert fig)
+    ```{r}
+    knitr::include_graphics("./images/Screenshot 2025-05-13 at 12.07.23.png")
+    ```
 
--   The rendered (or knitted) html will open in the web browser as shown\
-    (insert fig)
+    Quarto .qmd files are very useful as they let you combine code, results, and text in one place for fully reproducible documents. They’re flexible, easy to format, and can output to HTML, PDF, or Word.
 
-2.  From the command line interface, initialise this folder as a git repository and push it to a GitHub repository.
+-   Upon creating the Qmd file, you will see that there is some default text that is present in the file. We can delete or replace this text, and then select the "Render" button shown in the figure below. This will create a html page of the contents of the qmd file. Rendering the qmd file will require you to save it first.
+
+```{r}
+knitr::include_graphics("./images/Screenshot 2025-05-13 at 12.21.18.png")
+```
+
+-   The rendered (or knitted) html will open in the web browser as shown:
+
+```{r}
+knitr::include_graphics("./images/Screenshot 2025-05-13 at 12.26.59.png")
+```
+
+**2. From the command line interface, initialise this folder as a git repository and push it to a GitHub repository.**
 
 -   RStudio has a section called "Terminal" that is a Command Line Interface (CLI), so we will be using it to perform all CLI based tasks.
 
 -   Now use the CLI and open the directory for the folder.
 
--   Use the command `git init` to initialise the folder as a git repository
+-   Use the command `git init` to create a local repository. This command initialises a new Git repository in the current directory, allowing you to use version control. However, as this is only a local repository, it is not connected to GitHub yet.
 
--   
+-   Add and commit the files into the local repository we just created using the commands given below. Git does not "create" a branch unless there is at least one commit made, so the local repository is currently empty. We do this so that the local repository has one commit.
+
+``` bash
+git add .
+
+git commit -m "Initial Commit"
+```
+
+-   Now copy the SSH code of the desired empty remote repository on GitHub, and enter it in the following code.
+
+``` bash
+git branch -M main
+
+git remote add origin <enter your SSH code here>
+
+git push -u origin main
+```
+
+Here, `git branch -M main` renames the current branch to "main".\
+`git remote add origin <enter your SSH code here>` links the local repo to the remote repo on GitHub.\
+`git push -u origin main` pushes the main branch on the local repository to the remote repository, the `-u` sets the upstream to the GitHub repository that we have added. This command ensures that git knows which repository to push to going forward. Also note that this is a one time operation, and future push commands will not have `-u` .
+
+-   Now your folder has been pushed to your repository in GitHub. You should be able to see the files in your folder on GitHub.
+
+    ```{r}
+    knitr::include_graphics("./images/Screenshot 2025-05-12 at 9.31.45.png")
+    ```
+
+**3. Create a new branch called `testbranch`. Modify the file `example.qmd` and add the changes to both the local and remote repositories.**
