@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Pranav Sajeev - 35571381">
 
-<title>a2</title>
+<title>ETC5513_Assignment_2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -45,13 +80,19 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">a2</h1>
+<h1 class="title">ETC5513_Assignment_2</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Pranav Sajeev - 35571381 </p>
+          </div>
+  </div>
     
   
     
@@ -64,30 +105,125 @@ ul.task-list li input[type="checkbox"] {
 
 <p>This guide will demonstrate how to use git ..<br>
 *** INTRO REQUIRED ***</p>
-<ol type="1">
-<li>Create an RStudio project. In this folder, create a simple qmd file called&nbsp;<code>example.qmd</code>&nbsp;that can be knitted into a HTML file. Show the result of the knitted file.</li>
-</ol>
+<p><strong>1. Create an RStudio project. In this folder, create a simple qmd file called&nbsp;<code>example.qmd</code>&nbsp;that can be knitted into a HTML file. Show the result of the knitted file.</strong></p>
 <ul>
 <li><p>First, open RStudio.</p></li>
-<li><p>Then navigate to the File section, and select “New Project” as shown below<br>
-(insert ss).</p></li>
-<li><p>Select “New Directory”, and then select “New Project”.</p></li>
-<li><p>Set your desired directory name and choose where you want the project to be stored, as shown below, then click on “Create Project”<br>
-(insert ss)<br>
-</p></li>
-<li><p>Navigate to the File section like in fig1, in the new project we just created, and click on “New File”, and select “Quarto Document” to create a .qmd file.</p></li>
-<li><p>Upon creating the Qmd file, select the “Render” button as shown in the figure below. Rendering the qmd file will require you to save it first.<br>
-(insert fig)</p></li>
-<li><p>The rendered (or knitted) html will open in the web browser as shown<br>
-(insert fig)</p></li>
+<li><p>Then navigate to the File section, and select “New Project” .</p></li>
+<li><p>In the menu that pops up after this, select “New Directory”, and then select “New Project”.</p></li>
+<li><p>Set your desired directory name and choose where you want the project to be stored, as shown below, then click on “Create Project”</p></li>
+<li><p>Navigate to the File section again, in the new project we just created, and click on “New File”, and select “Quarto Document” to create a .qmd file. Save it and name it <code>example.qmd</code> .<br>
+</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/Screenshot%202025-05-13%20at%207.33.11.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Quarto .qmd files are very useful as they let you combine code, results, and text in one place for fully reproducible documents. They’re flexible, easy to format, and can output to HTML, PDF, or Word.</p></li>
+<li><p>Upon creating the Qmd file, you will see that there is some default text that is present in the file. We can delete or replace this text, and then select the “Render” button shown in the figure below. This will create a html page of the contents of the qmd file. Rendering the qmd file will require you to save it first.</p></li>
 </ul>
-<ol start="2" type="1">
-<li>From the command line interface, initialise this folder as a git repository and push it to a GitHub repository.</li>
-</ol>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/Screenshot%202025-05-13%20at%207.33.21.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>The rendered (or knitted) html will open in the web browser as shown:</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/Screenshot%202025-05-13%20at%207.33.30.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>2. From the command line interface, initialise this folder as a git repository and push it to a GitHub repository.</strong></p>
 <ul>
 <li><p>RStudio has a section called “Terminal” that is a Command Line Interface (CLI), so we will be using it to perform all CLI based tasks.</p></li>
-<li><p>, we will use the CLI and open the directory for the folder.</p></li>
-<li><p>then use the command <code>git init</code> to initialise the folder as a git repository</p></li>
+<li><p>Now use the CLI and open the directory for the folder.</p></li>
+<li><p>Use the command <code>git init</code> to create a local repository. This command initialises a new Git repository in the current directory, allowing you to use version control. However, as this is only a local repository, it is not connected to GitHub yet.</p></li>
+<li><p>Add and commit the files into the local repository we just created using the commands given below. Git does not “create” a branch unless there is at least one commit made, so the local repository is currently empty. We do this so that the local repository has one commit.</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial Commit"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Now copy the SSH code of the desired empty remote repository on GitHub, and enter it in the following code.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin <span class="op">&lt;</span>enter your SSH code here<span class="op">&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here, <code>git branch -M main</code> renames the current branch to “main”.<br>
+<code>git remote add origin &lt;enter your SSH code here&gt;</code> links the local repo to the remote repo on GitHub.<br>
+<code>git push -u origin main</code> pushes the main branch on the local repository to the remote repository, the <code>-u</code> sets the upstream to the GitHub repository that we have added. This command ensures that git knows which remote repository to push to going forward. Also note that this is a one time operation, and future push commands will not have <code>-u</code> .</p>
+<ul>
+<li>Now your folder has been pushed to your repository in GitHub. You should be able to see the files in your folder on GitHub.</li>
+</ul>
+<p><strong>3. Create a new branch called&nbsp;<code>testbranch</code>. Modify the file&nbsp;<code>example.qmd</code>&nbsp;and add the changes to both the local and remote repositories.</strong></p>
+<ul>
+<li>To create a new branch, use the command <code>git branch &lt;branch name&gt;</code> . In this case we will name the branch testbranch, so the command will be</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch testbranch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>To see which branch we are currently on, just enter the command <code>git branch</code></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/Screenshot%202025-05-13%20at%207.33.51.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This shows that we are now on the main branch.</p>
+<ul>
+<li>To switch to another branch, we use the command <code>git switch &lt;branch name&gt;</code> .</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/Screenshot%202025-05-13%20at%207.33.59.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Branches are an extremely useful and important feature of git. It allows the user to create a duplicate of the repository and make changes to it without affecting the main branch or any other branches. This means that multiple users can work on the same project at the same time without affecting the main project, and just add the changes to the main branch when they’re done.</p>
+<ul>
+<li><p>Now that we are on testbranch, make some changes to <code>example.qmd</code> . Note that <code>testbranch</code> has only been created on the local repository as of now. It will not show on GitHub yet as we have not pushed it.</p></li>
+<li><p>After the changes have been made, save the file. Now stage the file and commit the change as usual. This commit will be in <code>testbranch</code> and not in <code>main</code>.<br>
+When we push these changes to the remote repository, we use the command <code>git push origin testbranch</code> as we are pushing the changes to the branch called <code>testbranch</code> .</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/Screenshot%202025-05-13%20at%207.26.50.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p>Once we look at our remote repository on GitHub, we can see the file has been changed.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/Screenshot%202025-05-13%20at%207.57.15.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div></li>
 </ul>
 
 </main>

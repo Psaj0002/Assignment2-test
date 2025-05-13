@@ -113,7 +113,7 @@ Branches are an extremely useful and important feature of git. It allows the use
 
 -   Now that we are on testbranch, make some changes to `example.qmd` . Note that `testbranch` has only been created on the local repository as of now. It will not show on GitHub yet as we have not pushed it.
 
--   After the changes have been made, save the file. Now stage the file and commit the change as usual. This commit will be in `testbranch` and not in `main`. \
+-   After the changes have been made, save the file. Now stage the file and commit the change as usual. This commit will be in `testbranch` and not in `main`.\
     When we push these changes to the remote repository, we use the command `git push origin testbranch` as we are pushing the changes to the branch called `testbranch` .
 
     ```{r}
@@ -123,5 +123,21 @@ Branches are an extremely useful and important feature of git. It allows the use
 -   Once we look at our remote repository on GitHub, we can see the file has been changed.
 
     ```{r}
-    knitr::include_graphics("./images/Screenshot 2025-05-13 at 7.57.15.png")
+    knitr::include_graphics("./images/Screenshot 2025-05-13 at 8.00.31.png")
+    ```
+
+**4. Create a folder called data, and add the data from Assignment 1 to that folder. Amend the previous commit to include the data folder. Push this amended commit to the remote.**
+
+-   In the finder/file explorer, add a file called data that has some data in it. The folder should look like this:
+
+    ```{r}
+    knitr::include_graphics("./images/Screenshot 2025-05-13 at 8.07.29.png")
+    ```
+
+-   In cases such as this where we would like to modify the previous commit to include a file that we may have missed out, we can use the command `git commit --amend`. This command lets you modify the previous commit, so we can use it to add files or change the commit message.
+
+-   Before we use the command, we have to stage the folder using `git add` first. The end commands will look like this
+
+    ```{r}
+    knitr::include_graphics("./images/Screenshot 2025-05-13 at 8.07.29.png")
     ```
