@@ -4,6 +4,8 @@ format: html
 editor: visual
 ---
 
+git add example.qmd git commit -m "Adding changes to example.qmd on main (step5)" git push origin main
+
 ## Quarto
 
 Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
@@ -24,3 +26,21 @@ You can add options to executable code like this
 ```
 
 The `echo: false` option disables the printing of code (only output is displayed).
+
+| Theme Name  | Description / Style               |
+|-------------|-----------------------------------|
+| `default`   | Clean Quarto default              |
+| `cerulean`  | Blue/gray, classic Bootstrap look |
+| `cosmo`     | Modern, minimal, slightly rounded |
+| `flatly`    | Flat design, light blue accent    |
+| `journal`   | Elegant serif style               |
+| `litera`    | Readable, spacious typography     |
+| `lumen`     | Bright, light-weight layout       |
+| `minty`     | Cool mint-green highlights        |
+| `pulse`     | Bold, modern with soft accents    |
+| `sandstone` | Earth-tone, slightly textured     |
+| `simplex`   | Bold, high contrast               |
+| `sketchy`   | Hand-drawn, informal              |
+| `spacelab`  | Techy and minimal                 |
+| `united`    | Orange and red hues, energetic    |
+| `yeti`      | Simple, clean, blue-toned         |

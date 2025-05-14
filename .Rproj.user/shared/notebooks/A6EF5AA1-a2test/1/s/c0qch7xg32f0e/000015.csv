@@ -2,7 +2,5 @@
 "0","  echo = FALSE,"
 "0","  message = FALSE,"
 "0","  warning = FALSE,"
-"0","  fig.width = 3,"
-"0","  fig.height = 3,"
 "0","  fig.align = ""center"""
 "0",")"

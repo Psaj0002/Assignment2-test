@@ -3,9 +3,7 @@ title: "ETC5513_Assignment_2"
 author: Pranav Sajeev - 35571381
 format:
   html:
-    fig-width: 6
-    fig-height: 4
-    toc: false
+    css: style.css
     theme: cosmo
 editor: visual
 ---
@@ -15,8 +13,6 @@ knitr::opts_chunk$set(
   echo = FALSE,
   message = FALSE,
   warning = FALSE,
-  fig.width = 3,
-  fig.height = 3,
   fig.align = "center"
 )
 ```
@@ -24,7 +20,7 @@ knitr::opts_chunk$set(
 This guide will demonstrate how to use git ..\
 \*\*\* INTRO REQUIRED \*\*\*
 
-**1. Create an RStudio project. In this folder, create a simple qmd file called `example.qmd` that can be knitted into a HTML file. Show the result of the knitted file.**
+#### **1. Create an RStudio project. In this folder, create a simple qmd file called `example.qmd` that can be knitted into a HTML file. Show the result of the knitted file.**
 
 -   First, open RStudio.
 
@@ -54,7 +50,7 @@ knitr::include_graphics("./images/Screenshot 2025-05-13 at 7.33.21.png")
 knitr::include_graphics("./images/Screenshot 2025-05-13 at 7.33.30.png")
 ```
 
-**2. From the command line interface, initialise this folder as a git repository and push it to a GitHub repository.**
+#### **2. From the command line interface, initialise this folder as a git repository and push it to a GitHub repository.**
 
 -   RStudio has a section called "Terminal" that is a Command Line Interface (CLI), so we will be using it to perform all CLI based tasks.
 
@@ -80,13 +76,15 @@ git remote add origin <enter your SSH code here>
 git push -u origin main
 ```
 
-Here, `git branch -M main` renames the current branch to "main".\
-`git remote add origin <enter your SSH code here>` links the local repo to the remote repo on GitHub.\
-`git push -u origin main` pushes the main branch on the local repository to the remote repository, the `-u` sets the upstream to the GitHub repository that we have added. This command ensures that git knows which remote repository to push to going forward. Also note that this is a one time operation, and future push commands will not have `-u` .
+-   Here, `git branch -M main` renames the current branch to "main".\
+    `git remote add origin <enter your SSH code here>` links the local repo to the remote repo on GitHub.\
+    `git push -u origin main` pushes the main branch on the local repository to the remote repository, the `-u` sets the upstream to the GitHub repository that we have added. This command ensures that git knows which remote repository to push to going forward. Also note that this is a one time operation, and future push commands will not have `-u` .
+
+<!-- -->
 
 -   Now your folder has been pushed to your repository in GitHub. You should be able to see the files in your folder on GitHub.
 
-**3. Create a new branch called `testbranch`. Modify the file `example.qmd` and add the changes to both the local and remote repositories.**
+#### **3. Create a new branch called `testbranch`. Modify the file `example.qmd` and add the changes to both the local and remote repositories.**
 
 -   To create a new branch, use the command `git branch <branch name>` . In this case we will name the branch testbranch, so the command will be
 
@@ -126,7 +124,7 @@ Branches are an extremely useful and important feature of git. It allows the use
     knitr::include_graphics("./images/Screenshot 2025-05-13 at 8.00.31.png")
     ```
 
-**4. Create a folder called data, and add the data from Assignment 1 to that folder. Amend the previous commit to include the data folder. Push this amended commit to the remote.**
+#### **4. Create a folder called data, and add the data from Assignment 1 to that folder. Amend the previous commit to include the data folder. Push this amended commit to the remote.**
 
 -   In the finder/file explorer, add a file called data that has some data in it. The folder should look like this:
 
@@ -153,11 +151,52 @@ Branches are an extremely useful and important feature of git. It allows the use
     We can check the commits using the command `git log –oneline`.
 
     ```{r}
-     knitr::include_graphics("./images/Screenshot 2025-05-13 at 11.37.10.png")
+     knitr::include_graphics("./images/Screenshot 2025-05-13 at 11.53.22.png")
     ```
 
--   Now push the commit to the remote repository using
+-   Now push the commit to the remote repository using:
 
 ``` bash
 git push origin testbranch
 ```
+
+#### **5. Switch back to the main branch and modify example.qmd in a different way such that it will conflict with testbranch. Commit and push these changes.**
+
+-   To switch back to the main branch, use `git switch main`. This switches the current branch from `testbranch` to `main`. To check the branch you are currently in, use `git branch` like we did previously.
+-   Once we switch to main, you may notice that `example.qmd` looks different. This is because we made changes to `example.qmd` while we were on the branch `testbranch` and all the changes were committed and pushed to that branch. The `main` branch remains unchanged as nothing was committed or pushed to this branch.
+-   Make changes in `example.qmd` in the same line as the changes in `testbranch`.
+
+```{r}
+knitr::include_graphics("./images/Screenshot 2025-05-14 at 12.36.29.png")
+```
+
+-   Add, commit and push these changes using:
+
+``` bash
+git add example.qmd
+git commit -m "Adding changes to example.qmd on main (step5)"
+git push origin main
+```
+
+#### **6. Merge the changes in testbranch onto main. Show the conflict and fixing the merge conflict. Push the changes to GitHub, showing the status and changes in GitHub.**
+
+-   Merging is the process of combining the changes from one branch into another branch. \
+    We use the command `git merge <branchname>` to merge the branch into the current branch. The main real world use case for merging is to integrate work from multiple contributors in different branches.
+-   However, there may be cases where the same file has been modified in different ways in the branches we are trying to merge. Git will attempt to automatically combine all changes, but when the changes conflict with each other, git will ask the user which changes are to be kept. This is called a merge conflict. Git will halt the merging process and mark the files with conflicts.
+-   Now we will try to get the changes from `testbranch` into the `main` branch. Note that you will have to be in the branch that you want to get the changes into, in this case, it is `main`.
+
+```{r}
+knitr::include_graphics("./images/Screenshot 2025-05-14 at 11.30.48.png")
+```
+
+-   This is what a merge conflict looks like. It shows both the changes made on main and the changes made on testbranch. Now it is up to the user to decide which changes they want to keep.
+
+-   Once the decision has been made, delete the markers and save the file. Here we are keeping the changes from both the branches.
+
+    ```{r}
+    knitr::include_graphics("./images/Screenshot 2025-05-14 at 11.35.46.png")
+    ```
+
+-   Also note that we have not pushed the data folder to the remote repo on `main`. So when we merge the two branches, the data folder gets added to the staging area as well.
+
+-   Now we commit the

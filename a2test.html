@@ -70,6 +70,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="a2test_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body class="fullcontent">
@@ -105,7 +106,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>This guide will demonstrate how to use git ..<br>
 *** INTRO REQUIRED ***</p>
-<p><strong>1. Create an RStudio project. In this folder, create a simple qmd file called&nbsp;<code>example.qmd</code>&nbsp;that can be knitted into a HTML file. Show the result of the knitted file.</strong></p>
+<section id="create-an-rstudio-project.-in-this-folder-create-a-simple-qmd-file-called-example.qmd-that-can-be-knitted-into-a-html-file.-show-the-result-of-the-knitted-file." class="level4">
+<h4 class="anchored" data-anchor-id="create-an-rstudio-project.-in-this-folder-create-a-simple-qmd-file-called-example.qmd-that-can-be-knitted-into-a-html-file.-show-the-result-of-the-knitted-file."><strong>1. Create an RStudio project. In this folder, create a simple qmd file called&nbsp;<code>example.qmd</code>&nbsp;that can be knitted into a HTML file. Show the result of the knitted file.</strong></h4>
 <ul>
 <li><p>First, open RStudio.</p></li>
 <li><p>Then navigate to the File section, and select “New Project” .</p></li>
@@ -146,7 +148,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><strong>2. From the command line interface, initialise this folder as a git repository and push it to a GitHub repository.</strong></p>
+</section>
+<section id="from-the-command-line-interface-initialise-this-folder-as-a-git-repository-and-push-it-to-a-github-repository." class="level4">
+<h4 class="anchored" data-anchor-id="from-the-command-line-interface-initialise-this-folder-as-a-git-repository-and-push-it-to-a-github-repository."><strong>2. From the command line interface, initialise this folder as a git repository and push it to a GitHub repository.</strong></h4>
 <ul>
 <li><p>RStudio has a section called “Terminal” that is a Command Line Interface (CLI), so we will be using it to perform all CLI based tasks.</p></li>
 <li><p>Now use the CLI and open the directory for the folder.</p></li>
@@ -164,13 +168,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin <span class="op">&lt;</span>enter your SSH code here<span class="op">&gt;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Here, <code>git branch -M main</code> renames the current branch to “main”.<br>
+<ul>
+<li>Here, <code>git branch -M main</code> renames the current branch to “main”.<br>
 <code>git remote add origin &lt;enter your SSH code here&gt;</code> links the local repo to the remote repo on GitHub.<br>
-<code>git push -u origin main</code> pushes the main branch on the local repository to the remote repository, the <code>-u</code> sets the upstream to the GitHub repository that we have added. This command ensures that git knows which remote repository to push to going forward. Also note that this is a one time operation, and future push commands will not have <code>-u</code> .</p>
+<code>git push -u origin main</code> pushes the main branch on the local repository to the remote repository, the <code>-u</code> sets the upstream to the GitHub repository that we have added. This command ensures that git knows which remote repository to push to going forward. Also note that this is a one time operation, and future push commands will not have <code>-u</code> .</li>
+</ul>
+<!-- -->
 <ul>
 <li>Now your folder has been pushed to your repository in GitHub. You should be able to see the files in your folder on GitHub.</li>
 </ul>
-<p><strong>3. Create a new branch called&nbsp;<code>testbranch</code>. Modify the file&nbsp;<code>example.qmd</code>&nbsp;and add the changes to both the local and remote repositories.</strong></p>
+</section>
+<section id="create-a-new-branch-called-testbranch.-modify-the-file-example.qmd-and-add-the-changes-to-both-the-local-and-remote-repositories." class="level4">
+<h4 class="anchored" data-anchor-id="create-a-new-branch-called-testbranch.-modify-the-file-example.qmd-and-add-the-changes-to-both-the-local-and-remote-repositories."><strong>3. Create a new branch called&nbsp;<code>testbranch</code>. Modify the file&nbsp;<code>example.qmd</code>&nbsp;and add the changes to both the local and remote repositories.</strong></h4>
 <ul>
 <li>To create a new branch, use the command <code>git branch &lt;branch name&gt;</code> . In this case we will name the branch testbranch, so the command will be</li>
 </ul>
@@ -219,12 +228,85 @@ When we push these changes to the remote repository, we use the command <code>gi
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./images/Screenshot%202025-05-13%20at%207.57.15.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="./images/Screenshot%202025-05-13%20at%208.00.31.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
 </div></li>
 </ul>
+</section>
+<section id="create-a-folder-called-data-and-add-the-data-from-assignment-1-to-that-folder.-amend-the-previous-commit-to-include-the-data-folder.-push-this-amended-commit-to-the-remote." class="level4">
+<h4 class="anchored" data-anchor-id="create-a-folder-called-data-and-add-the-data-from-assignment-1-to-that-folder.-amend-the-previous-commit-to-include-the-data-folder.-push-this-amended-commit-to-the-remote."><strong>4. Create a folder called data, and add the data from Assignment 1 to that folder. Amend the previous commit to include the data folder. Push this amended commit to the remote.</strong></h4>
+<ul>
+<li><p>In the finder/file explorer, add a file called data that has some data in it. The folder should look like this:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/Screenshot%202025-05-13%20at%208.07.29.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p>In cases such as this where we would like to modify the previous commit to include a file that we may have missed out, we can use the command <code>git commit --amend</code>. This command lets you modify the previous commit, so we can use it to add files or change the commit message.</p></li>
+<li><p>Before we use the command, we have to stage the folder using <code>git add</code> first. The end commands will look like this:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add data/</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--amend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Once this code is entered, a text editor will open with the existing commit message.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/Screenshot%202025-05-13%20at%2011.33.42.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p>We can make changes to this commit message in the text editor. Be sure to save the text file and close the text editor. If you do not wish to change the commit message, you can simply close the text editor. Once this is done, the current commit should have the new commit message and all the files we staged earlier as well.<br>
+We can check the commits using the command <code>git log –oneline</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/Screenshot%202025-05-13%20at%2011.53.22.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p>Now push the commit to the remote repository using:</p></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin testbranch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="switch-back-to-the-main-branch-and-modify-example.qmd-in-a-different-way-such-that-it-will-conflict-with-testbranch.-commit-and-push-these-changes." class="level4">
+<h4 class="anchored" data-anchor-id="switch-back-to-the-main-branch-and-modify-example.qmd-in-a-different-way-such-that-it-will-conflict-with-testbranch.-commit-and-push-these-changes."><strong>5. Switch back to the main branch and modify example.qmd in a different way such that it will conflict with testbranch. Commit and push these changes.</strong></h4>
+<ul>
+<li>To switch back to the main branch, use <code>git switch main</code>. This switches the current branch from <code>testbranch</code> to <code>main</code>. To check the branch you are currently in, use <code>git branch</code> like we did previously.</li>
+<li>Once we switch to main, you may notice that <code>example.qmd</code> looks different. This is because we made changes to <code>example.qmd</code> while we were on the branch <code>testbranch</code> and all the changes were committed and pushed to that branch. The <code>main</code> branch remains unchanged as nothing was committed or pushed to this branch.</li>
+<li>Make changes in <code>example.qmd</code> in the same line as the changes in <code>testbranch</code>.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/Screenshot%202025-05-14%20at%2012.36.29.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Add, commit and push these changes using:</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.qmd</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Adding changes to example.qmd on main (step5)"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="merge-the-changes-in-testbranch-onto-main.-show-the-conflict-and-fixing-the-merge-conflict.-push-the-changes-to-github-showing-the-status-and-changes-in-github." class="level4">
+<h4 class="anchored" data-anchor-id="merge-the-changes-in-testbranch-onto-main.-show-the-conflict-and-fixing-the-merge-conflict.-push-the-changes-to-github-showing-the-status-and-changes-in-github."><strong>6. Merge the changes in testbranch onto main. Show the conflict and fixing the merge conflict. Push the changes to GitHub, showing the status and changes in GitHub.</strong></h4>
+<ul>
+<li>Merging is the process of combining the changes from one branch into another branch. Here we will try to get the changes from <code>testbranch</code> into the <code>main</code> branch. We use the command <code>git merge &lt;branchname&gt;</code> to merge the branch into the current branch. Note that you will have to be in the branch that you want to get the changes into, in this case, it is <code>main</code>. The main real world use case for merging is to integrate work from multiple contributors in different branches.</li>
+<li>However, there may be cases where the same file has been modified in different ways in the branches we are trying to merge. Git will attempt to automatically combine all changes, but when the changes conflict with each other, git will ask the user which changes are to be kept. This is called a merge conflict. Git will halt the merging process and mark the files with conflicts.</li>
+</ul>
+</section>
 
 </main>
 <!-- /main column -->

@@ -1,0 +1,87 @@
+---
+title: "ETC5513_Assignment_1"
+author: Pranav Sajeev - 35571381
+format:
+  html:
+    toc: true
+    toc-title: Contents
+    theme: superhero
+  pdf: default
+editor: visual
+---
+
+```{r}
+#| echo: false
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(knitr)
+library(readr)
+library(kableExtra)
+library(ggplot2)
+```
+
+## Introduction
+
+Population decline has been a popular topic of discussion in recent times. For this project, I will research the correlation between certain factors to the population growth rate in countries. I am picking this topic as it is a growing issue in today's world and we need a better understanding of the root causes of the problem in order to find out ways to solve it.
+
+## Research Question
+
+The research question for this project is to find if there is a correlation between the life expectancy at birth and the population growth rate. The objective is to find out if population growth is solely dependent on how developed a nation is.
+
+## The Dataset
+
+The dataset we will be using is the [CIA World Factbook](https://github.com/rfordatascience/tidytuesday/blob/main/data/2024/2024-10-22/cia_factbook.csv) dataset on tidytuesday. This dataset contains demographic data for 259 countries and regions (recognised by USA). It contains many factors such as birth rate, death rate, infant mortality rates, life expectancy and so on.
+
+```{r }
+# Reading in the data 
+
+cia_data= read_csv('./Data/cia_factbook.csv')
+```
+
+```{r}
+#| label: tbl-variables
+#| tbl-cap: "Variable names of the dataset"
+
+variable_names=colnames(cia_data)
+varnames=data.frame("Variable Names"=variable_names) 
+varnames|>
+  kable(caption = "Demographic data of 259 countries, with various population parameters as mentioned below: ")|>
+  kable_material()
+```
+
+See @tbl-variables for the variable names.
+
+## Dataset Description
+
+The data contains `r ncol(cia_data)` variables and `r nrow(cia_data)` observations.
+
+The types of the variables are as follows:
+
+```{r}
+
+head(cia_data,2)
+```
+
+```{r}
+knitr::include_graphics("./Images/Inline_screenshot.png")
+```
+
+## Results
+
+```{r fig-pop}
+
+#| label: fig-pop
+#| fig-cap: "Relation between life expectancy and population growth"
+ggplot(cia_data, aes(x=population_growth_rate,
+                       y=life_exp_at_birth))+
+  geom_point()
+  
+```
+
+-   *From @fig-pop , we can see that there is a downward trend. This shows that as life expectancy increases, population growth is seen to decrease. We see that the population is growing in places where there is a lower life expectancy. This has been historically observed as people in poorer nations have higher birth rates to account for the uncertainties in the situation of their countries.*
+-   *Higher life expectancy is attributed to countries with better healthcare, nutrition and economic stability.*\
+    *There being a decrease in population growth despite being more developed suggests that there are other factors at play that contribute towards the downward trend.*
